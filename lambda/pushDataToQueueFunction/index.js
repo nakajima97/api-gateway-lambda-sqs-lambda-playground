@@ -1,5 +1,11 @@
 exports.handler = async (event) => {
   console.log({ event });
+
+  // ユーザエージェントをヘッダーから取得する
+  if ("User-Agent" in event.headers) {
+    console.log("header: ", event.headers["User-Agent"]);
+  }
+
   // リクエストデータを取得するなどの処理を行います
   const requestData = event.body;
 
